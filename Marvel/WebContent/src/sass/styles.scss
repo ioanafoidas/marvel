@@ -1,0 +1,74 @@
+// VARIABLES
+$turquoise:#18BC9C;
+$images: '../assets/images/';
+$breakpoints: (
+  'phone': 320px,
+  'tablet': 768px,
+  'desktop': 992px,
+  'large desktop': 1200px
+) !default;
+
+// MIXINS
+@mixin border-radius($radius:10px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// IMPORTS
+@import '_include-media';
+@import '_home';
+@import '_footer';
+@import '_select';
+@import '_navbar';
+@import '_modals';
+@import '_admin';
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+
+main {
+
+  background-color: white;
+}
+
+textarea {
+  resize: vertical;
+}
+
+table {
+  tr {
+    th {
+      min-width: 80px;
+      text-align: center;
+    }
+  }
+}
+
+button.btn-default {
+  &.btn-sm {
+    background-color: white;
+    border-width: 1px;
+    color: black;
+    }
+    &:hover{
+      background-color: #31708F;
+    }
+}
+
+textarea {
+  resize: none;
+}
+
+#chat {
+  background: red;
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  right: 0;
+  bottom:0;
+}

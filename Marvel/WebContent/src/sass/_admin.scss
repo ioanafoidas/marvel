@@ -1,0 +1,58 @@
+.admin{
+  .users {
+    margin-bottom: 30px;
+  }
+  .tabs{
+    .well{
+      padding: 50px;
+      .form-group{
+        margin: 25px 5px;
+      }
+      h1.text-center{
+        background: url($images +"/header-background.jpg") center 48% no-repeat;
+        height: 120px;
+        padding-top: 4%;
+        margin: 0;
+      }
+    }
+    .profile{
+        .col-md-4{
+          padding-top: 30px;
+          img{
+            margin: 10px ;
+          }
+          button,input{
+            margin: 20px 10px;
+          }
+        }
+        .col-md-8{
+          .form-inline{
+            margin: 30px 20px;
+            font-size: 20px;
+            input,textarea{
+              font-size: 20px;
+              width: 75%;
+            }
+          }
+        }
+      }
+      .messages{
+        blockquote{
+          margin-bottom: 35px;
+          padding-top: 0;
+        }
+        .form-inline{
+          margin: 30px 30px;
+          input,select{
+            margin: 5px 20px;
+          }
+        }
+      }
+  }
+  .uib-tab{
+    font-size: 30px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}

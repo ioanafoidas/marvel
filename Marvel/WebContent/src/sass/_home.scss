@@ -1,0 +1,76 @@
+.home-main {
+  background: url($images +'chat-background.png') 100% 100% repeat-x;
+  opacity: 50%;
+}
+.chat-conv {
+  overflow: none;
+  position: relative;
+  height: 80vh;
+  .bottom-align-text {
+    overflow: auto;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 80vh;
+    .individual-message-box {
+      border: 1px solid #e2e4e3;
+      border-radius: 5px;
+      padding: 5px;
+      word-wrap: break-word;
+      margin-left: 0;
+      margin-right: 0;
+      width: 90%;
+    }
+    .current-user-message {
+      @extend .individual-message-box;
+      float: left;
+      background-color: #e6ffe6;
+    }
+    .other-user-message {
+      @extend .individual-message-box;
+      float: right;
+      background-color: #e6ffe6;
+    }
+    .first-row {
+      font-size: 12px;
+    }
+    .second-row {
+      font-size: 16px;
+      color: black;
+    }
+  }
+}
+.userInfoParent {
+  position: relative;
+}
+.avatarParent {
+  padding-bottom: 15px;
+  width: 50px;
+  height: 50px;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+}
+.status {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.status-online {
+  @extend .status;
+  background-color: green;
+}
+.status-offline {
+  @extend .status;
+  background-color: rgb(128,128,128);
+}
+.user-name {  
+  position: absolute;
+  padding-right: 0px;
+  bottom: 25%;
+  right: 0;
+}

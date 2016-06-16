@@ -1,0 +1,89 @@
+main {
+  height: 80%;
+}
+
+custom-footer {
+  height: 10%;
+
+  .social {
+    list-style: none;
+
+    li {
+      float: left;
+      margin-right: 127px;
+
+      @include media('>tablet', '<large desktop') {
+        margin-right: 95px;
+      }
+      @include media('<=tablet') {
+        margin-right: 92px;
+      }
+      @include media('<=phone') {
+        margin-right: 18px;
+      }
+    }
+
+    a {
+      background-image: url("../assets/images/social.png");
+      height: 88px;
+      width: 92px;
+      display: block;
+
+      @include media('>tablet', '<large desktop') { //'from', 'to' (<, <=, >, >=)
+        height: 44px;
+        width: 46px;
+        background-size: 230px;
+      }
+      @include media('<=tablet') {
+        height: 28px;
+        width: 30px;
+        background-size: 150px;
+      }
+      @include media('<=phone') {
+        height: 25px;
+        width: 27px;
+        background-size: 135px;
+      }
+    }
+
+    .twitter {
+      a {
+        background-position: left top;
+        &:hover {
+          background-position: left bottom;
+        }
+      }
+    }
+
+    .facebook {
+      a {
+        background-position: 25% top;
+        &:hover {
+          background-position: 25% bottom;
+        }
+      }
+    }
+
+    .dribbble {
+      a {
+        background-position: 75% top;
+        &:hover {
+          background-position: 75% bottom;
+        }
+      }
+    }
+
+    li.instagram {
+      margin-right: 0;
+    }
+
+    .instagram {
+      a {
+        background-position: 100% top;
+        &:hover {
+          background-position: 100% bottom;
+        }
+      }
+    }
+  }
+}

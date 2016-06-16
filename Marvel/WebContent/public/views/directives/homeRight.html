@@ -1,0 +1,38 @@
+<article class="">
+
+    <div class="chat-conv ">
+      <div class="bottom-align-text" id="chat-conv">
+        <div data-ng-repeat="message in allMessages" class="row individual-message-box" data-ng-class="{'current-user-message': checkCurrentUser(), 'other-user-message': !checkCurrentUser()}">
+          <div class="col-xs-3 col-sm-2 col-lg-1" class="message-logo">
+            <img class= "avatar" data-ng-src="{{message.image}}"/>
+          </div>
+          <div class="col-xs-9 col-sm-10 col-lg-11">
+            <div class="first-row">
+              {{message.user}} ({{message.time}})
+            </div>
+
+            <div class="second-row" ng-bind-html="message.message | linky"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <form name="messageForm" data-ng-submit="send(message)" novalidate>
+        <div class="">
+          <!-- MESSAGE -->
+          <div class="" data-ng-class="{'has-error': messageForm.message.$invalid &&  messageForm.message.$dirty, 'has-success':  messageForm.message.$valid &&  messageForm.message.$dirty}">
+
+            <input type="text" class="form-control" name="message" data-ng-model="message.message" placeholder="Enter message..." autofocus>
+          </div>
+
+        </div>
+        <br>
+        <div class="">
+          <!-- <button type="submit" class="btn btn-info" data-ng-disabled="messageForm.$invalid">Send message</button> -->
+        </div>
+
+      </form>
+    </div>
+
+</article>

@@ -1,0 +1,17 @@
+<article class="">
+  <div data-ng-repeat="user in users" class="row userInfoParent" >
+    <div class="col-xs-4">
+      <div class="avatarParent ">
+        <div>
+          <img class="avatar" data-ng-src="{{user.image}}"/>
+        </div>
+        <div data-ng-class="{'status-online' : checkStatus(user.id), 'status-offline': !checkStatus(user.id)}"></div>
+      </div>
+      </div>
+      <div class="col-xs-8 user-name">
+        {{user.name}}
+      </div>
+
+  </div>
+
+</article>

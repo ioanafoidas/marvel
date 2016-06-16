@@ -1,0 +1,53 @@
+menu {
+  margin: 0;
+  padding: 0;
+  
+}
+.affix {
+  top:0;
+  width: 100%;
+  z-index: 9999 !important;
+}
+.navbar{
+  &.navbar-default{
+    border-radius: 0;
+  li {
+    padding-top: 8px;
+    font-size: 20px;
+    a{
+      padding: 10px;
+    }
+  }
+}
+  .navbar-header{
+    .navbar-brand{
+      font-size: 20px;
+      padding-top:11px;
+      line-height: 36px;
+    }
+    .navbar-form{
+      padding: 0;
+      margin: 8px 10px;
+    }
+  }
+  .dropdown{
+    .dropdown-menu{
+      li{
+        margin: 0;
+        a{
+          padding: 15px;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+.container-fluid.text-center {
+  background: url($images +"/header-bg.jpg") center 86% no-repeat;
+  height: 321px;
+}
+
+.activeTab{
+    border:2px solid $turquoise;
+    border-radius: 15px;
+}

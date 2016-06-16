@@ -1,0 +1,94 @@
+<div class="container-fluid"></div>
+<nav class="navbar navbar-default" data-spy="affix" data-offset-top="320">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- navigation icon -->
+      <a class="navbar-brand " ui-sref="home" class="pull-left">
+        <i class="fa fa-skype fa-lg"></i>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse text-center" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li>
+          <a ui-sref="home" data-ng-class="{activeTab:isActive('/')}">Home</a>
+        </li>
+        <li>
+          <a ui-sref="menu1" data-ng-class="{activeTab:isActive('/menu1')}">Menu Item 1</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a ui-sref="admin" data-ng-class="{activeTab:isActive('/admin')}">Admin</a>
+        </li>
+        <li class="dropdown" id="connect" data-drop-down="dropdown-menu">
+          <a href="#" class="dropdown-toggle pull-center pull-middle">Connect</a>
+          <ul class="dropdown-menu">
+            <li>
+              <a ui-sref="signup" data-ng-class="{activeTab:isActive('/signup')}">
+                <i class="fa fa-user-plus fa-lg"></i>
+                Sign up</a>
+            </li>
+            <li>
+              <a ng-click="openLogin()">
+                <i class="fa fa-sign-in fa-lg"></i>
+                Log In</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#">
+                <i class="fa fa-power-off fa-lg"></i>
+                Sign out</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- end of navbar-collapse -->
+  </div>
+  <!-- end of container -->
+</nav>
+
+<script type="text/ng-template" id="loginModal.html">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="close()">&times;</button>
+    <h1 class="text-center">
+      <strong>Log in</strong>
+    </h1>
+  </div>
+  <div class="modal-body">
+    <form name="login" data-ng-submit="Login(user)">
+      <div class="modal-body">
+        <div class="form-group" data-ng-class="{'has-error': login.username.$invalid && login.username.$dirty, 'has-success': login.username.$valid && login.username.$dirty}">
+          <label for="username"></span>Username</label>
+        <input type="text" data-ng-model="user.username" class="form-control" name="username" placeholder="Enter your username..." autofocus required>
+        <p data-ng-show="validate.required(login.username)" class="help-block">Username is required.</p>
+      </div>
+
+      <div class="form-group" data-ng-class="{'has-error': login.password.$invalid && login.password.$dirty, 'has-success': login.password.$valid && login.password.$dirty}">
+        <label for="password"></span>Password</label>
+      <input type="password" data-ng-model="user.password" class="form-control" name="password" placeholder="Enter your password..." required>
+      <p data-ng-show="validate.required(login.password)" class="help-block">Password is required.</p>
+    </div>  
+    <div class="text-danger" data-ng-show="errorMessage">
+      <strong>{{errorMessage}}</strong>
+    </div>
+    <div class="text-success" data-ng-show="successMessage">
+      <strong>{{successMessage}}</strong>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-default btn-success btn-block btn-lg" data-ng-disabled="login.$invalid">Log in</button>
+
+  </div>
+
+</form>
+</div>
+
+</script>

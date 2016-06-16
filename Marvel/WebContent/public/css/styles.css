@@ -1,0 +1,476 @@
+.home-main {
+  background: url("../assets/images/chat-background.png") 100% 100% repeat-x;
+  opacity: 50%; }
+
+.chat-conv {
+  overflow: none;
+  position: relative;
+  height: 80vh; }
+  .chat-conv .bottom-align-text {
+    overflow: auto;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 80vh; }
+    .chat-conv .bottom-align-text .individual-message-box, .chat-conv .bottom-align-text .current-user-message, .chat-conv .bottom-align-text .other-user-message {
+      border: 1px solid #e2e4e3;
+      border-radius: 5px;
+      padding: 5px;
+      word-wrap: break-word;
+      margin-left: 0;
+      margin-right: 0;
+      width: 90%; }
+    .chat-conv .bottom-align-text .current-user-message {
+      float: left;
+      background-color: #e6ffe6; }
+    .chat-conv .bottom-align-text .other-user-message {
+      float: right;
+      background-color: #e6ffe6; }
+    .chat-conv .bottom-align-text .first-row {
+      font-size: 12px; }
+    .chat-conv .bottom-align-text .second-row {
+      font-size: 16px;
+      color: black; }
+
+.userInfoParent {
+  position: relative; }
+
+.avatarParent {
+  padding-bottom: 15px;
+  width: 50px;
+  height: 50px; }
+
+.avatar {
+  width: 50px;
+  height: 50px; }
+
+.status, .status-online, .status-offline {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+.status-online {
+  background-color: green; }
+
+.status-offline {
+  background-color: gray; }
+
+.user-name {
+  position: absolute;
+  padding-right: 0px;
+  bottom: 25%;
+  right: 0; }
+
+main {
+  height: 80%; }
+
+custom-footer {
+  height: 10%; }
+  custom-footer .social {
+    list-style: none; }
+    custom-footer .social li {
+      float: left;
+      margin-right: 127px; }
+@media (min-width: 769px) and (max-width: 1199px) {
+  custom-footer .social li {
+    margin-right: 95px; } }
+
+      @media (max-width: 768px) {
+        custom-footer .social li {
+          margin-right: 92px; } }
+      @media (max-width: 320px) {
+        custom-footer .social li {
+          margin-right: 18px; } }
+    custom-footer .social a {
+      background-image: url("../assets/images/social.png");
+      height: 88px;
+      width: 92px;
+      display: block; }
+@media (min-width: 769px) and (max-width: 1199px) {
+  custom-footer .social a {
+    height: 44px;
+    width: 46px;
+    background-size: 230px; } }
+
+      @media (max-width: 768px) {
+        custom-footer .social a {
+          height: 28px;
+          width: 30px;
+          background-size: 150px; } }
+      @media (max-width: 320px) {
+        custom-footer .social a {
+          height: 25px;
+          width: 27px;
+          background-size: 135px; } }
+    custom-footer .social .twitter a {
+      background-position: left top; }
+      custom-footer .social .twitter a:hover {
+        background-position: left bottom; }
+    custom-footer .social .facebook a {
+      background-position: 25% top; }
+      custom-footer .social .facebook a:hover {
+        background-position: 25% bottom; }
+    custom-footer .social .dribbble a {
+      background-position: 75% top; }
+      custom-footer .social .dribbble a:hover {
+        background-position: 75% bottom; }
+    custom-footer .social li.instagram {
+      margin-right: 0; }
+    custom-footer .social .instagram a {
+      background-position: 100% top; }
+      custom-footer .social .instagram a:hover {
+        background-position: 100% bottom; }
+
+/*!
+ * ui-select
+ * http://github.com/angular-ui/ui-select
+ * Version: 0.13.2 - 2015-10-09T15:34:24.045Z
+ * License: MIT
+ */
+/* Style when highlighting a search. */
+.ui-select-highlight {
+  font-weight: bold; }
+
+.ui-select-offscreen {
+  clip: rect(0 0 0 0) !important;
+  width: 1px !important;
+  height: 1px !important;
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  outline: 0 !important;
+  left: 0px !important;
+  top: 0px !important; }
+
+.ui-select-choices-row:hover {
+  background-color: #f5f5f5; }
+
+/* Select2 theme */
+/* Mark invalid Select2 */
+.ng-dirty.ng-invalid > a.select2-choice {
+  border-color: #D44950; }
+
+.select2-result-single {
+  padding-left: 0; }
+
+.select2-locked > .select2-search-choice-close {
+  display: none; }
+
+.select-locked > .ui-select-match-close {
+  display: none; }
+
+body > .select2-container.open {
+  z-index: 9999;
+  /* The z-index Select2 applies to the select2-drop */ }
+
+/* Handle up direction Select2 */
+.ui-select-container[theme="select2"].direction-up .ui-select-match {
+  border-radius: 4px;
+  /* FIXME hardcoded value :-/ */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+.ui-select-container[theme="select2"].direction-up .ui-select-dropdown {
+  border-radius: 4px;
+  /* FIXME hardcoded value :-/ */
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-width: 1px;
+  /* FIXME hardcoded value :-/ */
+  border-top-style: solid;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.25);
+  margin-top: -4px;
+  /* FIXME hardcoded value :-/ */ }
+
+.ui-select-container[theme="select2"].direction-up .ui-select-dropdown .select2-search {
+  margin-top: 4px;
+  /* FIXME hardcoded value :-/ */ }
+
+.ui-select-container[theme="select2"].direction-up.select2-dropdown-open .ui-select-match {
+  border-bottom-color: #5897fb; }
+
+/* Selectize theme */
+/* Helper class to show styles when focus */
+.selectize-input.selectize-focus {
+  border-color: #007FBB !important; }
+
+/* Fix input width for Selectize theme */
+.selectize-control > .selectize-input > input {
+  width: 100%; }
+
+/* Fix dropdown width for Selectize theme */
+.selectize-control > .selectize-dropdown {
+  width: 100%; }
+
+/* Mark invalid Selectize */
+.ng-dirty.ng-invalid > div.selectize-input {
+  border-color: #D44950; }
+
+/* Handle up direction Selectize */
+.ui-select-container[theme="selectize"].direction-up .ui-select-dropdown {
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.25);
+  margin-top: -2px;
+  /* FIXME hardcoded value :-/ */ }
+
+/* Bootstrap theme */
+/* Helper class to show styles when focus */
+.btn-default-focus {
+  color: #333;
+  background-color: #EBEBEB;
+  border-color: #ADADAD;
+  text-decoration: none;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+
+.ui-select-bootstrap .ui-select-toggle {
+  position: relative; }
+
+.ui-select-bootstrap .ui-select-toggle > .caret {
+  position: absolute;
+  height: 10px;
+  top: 50%;
+  right: 10px;
+  margin-top: -2px; }
+
+/* Fix Bootstrap dropdown position when inside a input-group */
+.input-group > .ui-select-bootstrap.dropdown {
+  /* Instead of relative */
+  position: static; }
+
+.input-group > .ui-select-bootstrap > input.ui-select-search.form-control {
+  border-radius: 4px;
+  /* FIXME hardcoded value :-/ */
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.input-group > .ui-select-bootstrap > input.ui-select-search.form-control.direction-up {
+  border-radius: 4px !important;
+  /* FIXME hardcoded value :-/ */
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important; }
+
+.ui-select-bootstrap > .ui-select-match > .btn {
+  /* Instead of center because of .btn */
+  text-align: left !important; }
+
+.ui-select-bootstrap > .ui-select-match > .caret {
+  position: absolute;
+  top: 45%;
+  right: 15px; }
+
+/* See Scrollable Menu with Bootstrap 3 http://stackoverflow.com/questions/19227496 */
+.ui-select-bootstrap > .ui-select-choices {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden;
+  margin-top: -1px; }
+
+body > .ui-select-bootstrap.open {
+  z-index: 1000;
+  /* Standard Bootstrap dropdown z-index */ }
+
+.ui-select-multiple.ui-select-bootstrap {
+  height: auto;
+  padding: 3px 3px 0 3px; }
+
+.ui-select-multiple.ui-select-bootstrap input.ui-select-search {
+  background-color: transparent !important;
+  /* To prevent double background when disabled */
+  border: none;
+  outline: none;
+  height: 1.666666em;
+  margin-bottom: 3px; }
+
+.ui-select-multiple.ui-select-bootstrap .ui-select-match .close {
+  font-size: 1.6em;
+  line-height: 0.75; }
+
+.ui-select-multiple.ui-select-bootstrap .ui-select-match-item {
+  outline: 0;
+  margin: 0 3px 3px 0; }
+
+.ui-select-multiple .ui-select-match-item {
+  position: relative; }
+
+.ui-select-multiple .ui-select-match-item.dropping-before:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 100%;
+  height: 100%;
+  margin-right: 2px;
+  border-left: 1px solid #428bca; }
+
+.ui-select-multiple .ui-select-match-item.dropping-after:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  height: 100%;
+  margin-left: 2px;
+  border-right: 1px solid #428bca; }
+
+.ui-select-bootstrap .ui-select-choices-row > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap; }
+
+.ui-select-bootstrap .ui-select-choices-row > a:hover, .ui-select-bootstrap .ui-select-choices-row > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: #f5f5f5; }
+
+.ui-select-bootstrap .ui-select-choices-row.active > a {
+  color: #fff;
+  text-decoration: none;
+  outline: 0;
+  background-color: #428bca; }
+
+.ui-select-bootstrap .ui-select-choices-row.disabled > a,
+.ui-select-bootstrap .ui-select-choices-row.active.disabled > a {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff; }
+
+/* fix hide/show angular animation */
+.ui-select-match.ng-hide-add,
+.ui-select-search.ng-hide-add {
+  display: none !important; }
+
+/* Mark invalid Bootstrap */
+.ui-select-bootstrap.ng-dirty.ng-invalid > button.btn.ui-select-match {
+  border-color: #D44950; }
+
+/* Handle up direction Bootstrap */
+.ui-select-container[theme="bootstrap"].direction-up .ui-select-dropdown {
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.25); }
+
+menu {
+  margin: 0;
+  padding: 0; }
+
+.affix {
+  top: 0;
+  width: 100%;
+  z-index: 9999 !important; }
+
+.navbar.navbar-default {
+  border-radius: 0; }
+  .navbar.navbar-default li {
+    padding-top: 8px;
+    font-size: 20px; }
+    .navbar.navbar-default li a {
+      padding: 10px; }
+.navbar .navbar-header .navbar-brand {
+  font-size: 20px;
+  padding-top: 11px;
+  line-height: 36px; }
+.navbar .navbar-header .navbar-form {
+  padding: 0;
+  margin: 8px 10px; }
+.navbar .dropdown .dropdown-menu li {
+  margin: 0; }
+  .navbar .dropdown .dropdown-menu li a {
+    padding: 15px;
+    margin: 0; }
+
+.container-fluid.text-center {
+  background: url("../assets/images//header-bg.jpg") center 86% no-repeat;
+  height: 321px; }
+
+.activeTab {
+  border: 2px solid #18BC9C;
+  border-radius: 15px; }
+
+.modal-dialog {
+  margin-top: 8%; }
+  .modal-dialog.signup {
+    margin-top: 10px;
+    box-shadow: 8px 8px 10px gray; }
+  .modal-dialog .modal-header {
+    background: url("../assets/images/header-background-blue.jpg") 25% 30% no-repeat; }
+  .modal-dialog .modal-body {
+    padding: 20px 50px; }
+  .modal-dialog .modal-footer {
+    padding: 30px 50px; }
+
+.modal-backdrop {
+  opacity: 0.85 !important; }
+
+.admin .users {
+  margin-bottom: 30px; }
+.admin .tabs .well {
+  padding: 50px; }
+  .admin .tabs .well .form-group {
+    margin: 25px 5px; }
+  .admin .tabs .well h1.text-center {
+    background: url("../assets/images//header-background.jpg") center 48% no-repeat;
+    height: 120px;
+    padding-top: 4%;
+    margin: 0; }
+.admin .tabs .profile .col-md-4 {
+  padding-top: 30px; }
+  .admin .tabs .profile .col-md-4 img {
+    margin: 10px; }
+  .admin .tabs .profile .col-md-4 button, .admin .tabs .profile .col-md-4 input {
+    margin: 20px 10px; }
+.admin .tabs .profile .col-md-8 .form-inline {
+  margin: 30px 20px;
+  font-size: 20px; }
+  .admin .tabs .profile .col-md-8 .form-inline input, .admin .tabs .profile .col-md-8 .form-inline textarea {
+    font-size: 20px;
+    width: 75%; }
+.admin .tabs .messages blockquote {
+  margin-bottom: 35px;
+  padding-top: 0; }
+.admin .tabs .messages .form-inline {
+  margin: 30px 30px; }
+  .admin .tabs .messages .form-inline input, .admin .tabs .messages .form-inline select {
+    margin: 5px 20px; }
+.admin .uib-tab {
+  font-size: 30px; }
+  .admin .uib-tab:hover {
+    cursor: pointer; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px; }
+
+main {
+  background-color: white; }
+
+textarea {
+  resize: vertical; }
+
+table tr th {
+  min-width: 80px;
+  text-align: center; }
+
+button.btn-default.btn-sm {
+  background-color: white;
+  border-width: 1px;
+  color: black; }
+button.btn-default:hover {
+  background-color: #31708F; }
+
+textarea {
+  resize: none; }
+
+#chat {
+  background: red;
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  right: 0;
+  bottom: 0; }
