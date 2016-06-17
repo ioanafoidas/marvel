@@ -3,7 +3,8 @@ angular.module('Chat')
    return{
       restrict:'E',
       templateUrl:'views/directives/menu.html',
-      controller:   function($scope, $uibModal, $location){
+      controller:   function($scope, $uibModal, $location, $rootScope){
+        console.log("test");
         $scope.message = "";
         $scope.isActive = function(route) {
             return route === $location.path();
@@ -27,6 +28,11 @@ angular.module('Chat')
       console.log('Modal dismissed at: ' + new Date());
     });
   };
+
+    $rootScope.$on('ShowLoginModal', function() {
+      $scope.openLogin();
+      console.log("on event triggered");
+    });
 
       }
    }

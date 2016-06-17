@@ -10,12 +10,7 @@ angular
                     url: '/',
                     templateUrl:'views/home.html',
                     controller: 'homeCtrl'
-                })
-                .state('menu1',{
-                    url: '/menu1',
-                    templateUrl:'views/menu1.html',
-                    controller: 'menu1Ctrl'
-                })
+                })                
                 .state('signup',{
                     url:'/signup',
                     templateUrl:'views/signup.html',
