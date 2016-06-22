@@ -10,7 +10,10 @@ angular
         },
 
         RestoreState: function () {
+          if(sessionStorage.allMessages != undefined)
+          {
             service.allMessages = angular.fromJson(sessionStorage.allMessages);
+            }
         }
     }
 

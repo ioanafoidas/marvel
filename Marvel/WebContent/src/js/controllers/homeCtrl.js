@@ -29,7 +29,7 @@ angular
 
           console.log(message.message);
 
-          messageService.allMessages.push(message);
+          $scope.allMessages.push(message);
         }
         $timeout(function() {
           var scroller = document.getElementById("chat-conv");
