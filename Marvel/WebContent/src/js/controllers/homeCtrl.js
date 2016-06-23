@@ -1,27 +1,31 @@
 angular
   .module('Chat')
-  .controller('homeCtrl', ['$scope', 'GetRequest', '$timeout', 'messageService',
-    function($scope, GetRequest, $timeout, messageService) {
-
+  .controller('homeCtrl', ['$scope', 'GetRequest', '$timeout', 'messageService', 'usersService',
+    function($scope, GetRequest, $timeout, messageService, usersService) {
+      $scope.allUsers = usersService.allUsers;
       $scope.allMessages = messageService.allMessages;
       //console.log($scope.allMessages);
+      //  usersService.generateColor();
 
-      $scope.users= [
-        {
-          id: 1,
-          name : "Thor",
-          image :  "../public/assets/images/thor.png"
-        },
-        {
-          id: 2,
-          name : "Captain Iron",
-          image :  "../public/assets/images/IronMan.png"
-        }
-      ]
+      $scope.users = [{
+        id: 1,
+        name: "Thor",
+        image: "../public/assets/images/thor.png"
+
+      }, {
+        id: 2,
+        name: "Captain Iron",
+        image: "../public/assets/images/IronMan.png"
+      }];
+
+
 
       $scope.send = function(message) {
-        message.user = "Thor";
-        message.image = "../public/assets/images/thor.png";
+        message.user = {
+          name: "Thor",
+          image: "../public/assets/images/thor.png",
+          color: "red"
+        };
 
         message.time = getDateTime();
         if (message.message != null) {
@@ -39,9 +43,14 @@ angular
       }
 
 
-      $scope.checkCurrentUser = function() {
+      $scope.checkCurrentUser = function(message) {
         //todo
-        return true;
+        if (message.user.name === usersService.currentUser.name) {
+          return true;
+        } else {
+          return false;
+        }
+
       }
 
       $scope.checkStatus = function(userID) {

@@ -1,33 +1,29 @@
 angular
   .module('Chat')
-  .controller('LoginController', ['$scope', 'DatePicker', 'Validate', 'PostRequest', '$log', '$cookies', '$uibModalInstance',
-    function($scope, DatePicker, Validate, PostRequest, $log, $cookies, $uibModalInstance) {
+  .controller('LoginController', ['$scope', 'Validate', 'PostRequest', '$uibModalInstance', 'usersService',
+    function($scope, Validate, PostRequest, $uibModalInstance, usersService) {
 
       $scope.user = {};
       //$scope.user.updatedAt = new Date(); //default value for date
 
-      $scope.Login = function(user) {
+      $scope.Login = function() {
 
-        $scope.errorMessage = null; //hide any previous shown error message
-        PostRequest.post_data('../user/login', user).then(function(response) {
+        PostRequest.post_data('../user/login', "User Login").then(function(response) {
           console.log(response);
-          $scope.successMessage = "User logged in successfully";
-          var x = $cookies.getAll();
+          $scope.successMessage = "Congratulations, today you are" + "test";
+
+          //logic to handle name, picture and color
+          // usersService.currentUser = response;
 
           setTimeout(function() {
             $uibModalInstance.close($scope.successMessage);
           }, 1000);
 
-
-          $scope.user = {}; //reset form
-          $scope.login.$setPristine(); //reset form
         }, function(errorObject) {
           //console.log(errorObject.data.data);
-          $scope.errorMessage = errorObject.data.data;
-
+          $scope.successMessage = "Sorry" + "test";
         });
       };
-
 
       $scope.close = function(result) {
         $uibModalInstance.dismiss('cancel');

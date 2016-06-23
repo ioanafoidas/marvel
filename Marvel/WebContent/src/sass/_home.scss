@@ -24,12 +24,12 @@
     .current-user-message {
       @extend .individual-message-box;
       float: left;
-      background-color: #e6ffe6;
+      //background-color: #e6ffe6;
     }
     .other-user-message {
       @extend .individual-message-box;
       float: right;
-      background-color: #e6ffe6;
+      //background-color: #e6ffe6;
     }
     .first-row {
       font-size: 12px;
@@ -68,7 +68,7 @@
   @extend .status;
   background-color: rgb(128,128,128);
 }
-.user-name {  
+.user-name {
   position: absolute;
   padding-right: 0px;
   bottom: 25%;

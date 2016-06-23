@@ -9,32 +9,28 @@ angular
   ])
 
 .run(function($rootScope) {
-
   //Save the messages to sessionStorage before the page is refreshed
   window.onbeforeunload = function(event) {
     $rootScope.$broadcast('savestate');
   };
-
-
 })
 
-.run(['$rootScope', '$state', 'Auth', function ($rootScope, $state, Auth) {
+.run(['$rootScope', '$state', 'Auth', '$timeout', function($rootScope, $state, Auth, $timeout) {
+  // window.onload = function(event) {
+  //   if (!Auth.isLoggedIn()) {
+  //     console.log('DENY');
+  //   $rootScope.$emit('ShowLoginModal');   //$on is on menu.js directive controller
+  //   //console.log('DENY2');
+  //   //  event.preventDefault();
+  //   }
+  // }
 
-  window.onload = function(event)
-  {
+  $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 
-  }
-
-    $rootScope.$on('$stateChangeStart',  function (event, toState, toParams, fromState, fromParams) {
-      console.log("route change start");
-
-        if (!Auth.isLoggedIn() && toState.name !="signup") {
-          console.log(toState);
-            console.log('DENY');
-            //$rootScope.$emit('ShowLoginModal');
-            //event.preventDefault();
-
-
-        }
-    });
+    if (!Auth.isLoggedIn() && toState.name != "signup" && fromState.name) {
+       console.log('DENY');
+    $rootScope.$emit('ShowLoginModal');
+    //  event.preventDefault();
+    }
+  });
 }]);

@@ -17,7 +17,7 @@
       <ul class="nav navbar-nav">
         <li>
           <a ui-sref="home" data-ng-class="{activeTab:isActive('/')}">Home</a>
-        </li>        
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -59,9 +59,9 @@
     </h1>
   </div>
   <div class="modal-body">
-    <form name="login" data-ng-submit="Login(user)">
+    <form name="login" data-ng-submit="Login()">
       <div class="modal-body">
-        <div class="form-group" data-ng-class="{'has-error': login.username.$invalid && login.username.$dirty, 'has-success': login.username.$valid && login.username.$dirty}">
+        <!-- <div class="form-group" data-ng-class="{'has-error': login.username.$invalid && login.username.$dirty, 'has-success': login.username.$valid && login.username.$dirty}">
           <label for="username"></span>Username</label>
         <input type="text" data-ng-model="user.username" class="form-control" name="username" placeholder="Enter your username..." autofocus required>
         <p data-ng-show="validate.required(login.username)" class="help-block">Username is required.</p>
@@ -71,10 +71,10 @@
         <label for="password"></span>Password</label>
       <input type="password" data-ng-model="user.password" class="form-control" name="password" placeholder="Enter your password..." required>
       <p data-ng-show="validate.required(login.password)" class="help-block">Password is required.</p>
-    </div>  
-    <div class="text-danger" data-ng-show="errorMessage">
+    </div>   -->
+    <!-- <div class="text-danger" data-ng-show="errorMessage">
       <strong>{{errorMessage}}</strong>
-    </div>
+    </div> -->
     <div class="text-success" data-ng-show="successMessage">
       <strong>{{successMessage}}</strong>
     </div>
