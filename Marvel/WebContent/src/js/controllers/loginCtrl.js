@@ -1,16 +1,16 @@
 angular
   .module('Chat')
-  .controller('LoginController', ['$scope', 'Validate', 'PostRequest', '$uibModalInstance', 'usersService',
-    function($scope, Validate, PostRequest, $uibModalInstance, usersService) {
+  .controller('LoginController', ['$scope', 'Validate', 'GetRequest', '$uibModalInstance', 'usersService',
+    function($scope, Validate, GetRequest, $uibModalInstance, usersService) {
 
       $scope.user = {};
       //$scope.user.updatedAt = new Date(); //default value for date
 
       $scope.Login = function() {
 
-        PostRequest.post_data('../user/login', "User Login").then(function(response) {
+        GetRequest.get_data('../rest/login/user', "User Login").then(function(response) {
           console.log(response);
-          $scope.successMessage = "Congratulations, today you are" + "test";
+          $scope.successMessage = "Congratulations, today you are" + response.data.user.name;
 
           //logic to handle name, picture and color
           // usersService.currentUser = response;

@@ -14,6 +14,7 @@ angular
 
     // (function get_users_poll() {
     //   $http.get('users').success(function(data) {
+      // //Todo get only users after the last poll
     //     usersService.allUsers.push(data);
     //     $timeout(get_data_poll, 1000);
     //   });
@@ -22,6 +23,7 @@ angular
     //
     // (function get_messages_poll() {
     //   $http.get('messages').success(function(data) {
+              // //Todo get only messages after the last poll
     //     messageService.allMessages.push(data);
     //     $timeout(get_data_poll, 1000);
     //   });

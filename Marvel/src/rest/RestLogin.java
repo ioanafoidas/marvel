@@ -22,6 +22,30 @@ public class RestLogin {
 		user.setColor("red");
 		user.setPic("c:\\pic1.gif");
 		USERS.add(user);
+		
+		user = new User();
+		user.setName("Thor");
+		user.setColor("blue");
+		user.setPic("c:\\pic1.gif");
+		USERS.add(user);
+		
+		user = new User();
+		user.setName("Iron Man");
+		user.setColor("#ccff33");
+		user.setPic("c:\\pic1.gif");
+		USERS.add(user);
+		
+		user = new User();
+		user.setName("Deadpool");
+		user.setColor("#7F0000");
+		user.setPic("c:\\pic1.gif");
+		USERS.add(user);
+		
+		user = new User();
+		user.setName("Guardian of the Galaxy");
+		user.setColor("#f2e6ff");
+		user.setPic("c:\\pic1.gif");
+		USERS.add(user);
 	}
 
 	@GET
