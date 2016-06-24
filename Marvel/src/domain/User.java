@@ -44,4 +44,12 @@ public class User {
 	public void setColor(String color) {
 		this.color = color;
 	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
 }
