@@ -52,7 +52,7 @@ public class RestLogin {
 		user = new User();
 		user.setName("Black Widow");
 		user.setColor("#2fe6aa");
-		user.setPic("../public/assets/images/user33.png");
+		user.setPic("../public/assets/images/user4.png");
 		USERS.add(user);
 	}
 

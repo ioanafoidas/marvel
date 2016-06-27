@@ -17,7 +17,7 @@ import domain.Message;
 @Path("messages")
 public class RestMessages {
 
-	private List<Message> messages;
+	private List<Message> messages  = new ArrayList<Message>();
 
 	@GET
 	@Path("all/{date}")

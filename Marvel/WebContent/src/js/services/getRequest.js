@@ -15,9 +15,9 @@ angular
 
 
     (function get_users_poll() {
-      $http.get('../rest/login/users').success(function(data) {
+      $http.get('../rest/users/all').success(function(data) {
         //Todo get only users after the last poll
-        console.log(data.user);
+        //console.log(data.user);
 
         //usersService.allUsers = [];
         usersService.allUsers = data.user;
@@ -30,9 +30,9 @@ angular
     (function get_messages_poll() {
 
       $http.get('../rest/messages/all/'+Date.now()-3000).success(function(data) {
-        console.log("test")
           //Todo get only messages after the last poll
        messageService.allMessages.push(data);
+       //console.log(messageService.allMessages);
         $timeout(get_messages_poll, 3000);
       });
     })();

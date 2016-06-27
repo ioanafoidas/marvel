@@ -8,7 +8,7 @@ angular
 
       $scope.Login = function() {
 
-        GetRequest.get_data('../rest/login/user').then(function(response) {
+        GetRequest.get_data('../rest/users/login').then(function(response) {
           console.log(response);
           $scope.successMessage = "Congratulations, today you are " + response.data.user.name;
 

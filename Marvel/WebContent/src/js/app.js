@@ -12,6 +12,12 @@ angular
   //Save the messages to sessionStorage before the page is refreshed
   window.onbeforeunload = function(event) {
     $rootScope.$broadcast('savestate');
+
+  };
+
+  window.onunload = function(event) {
+    $rootScope.$broadcast('logout');
+
   };
 })
 
