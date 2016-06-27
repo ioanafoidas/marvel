@@ -15,7 +15,7 @@ angular
 
       $scope.send = function(message) {
         message.user = usersService.currentUser;
-        message.date = getDateTime();
+        message.date = Date.now();
         var sentMessage={};
         sentMessage.message = message;
 
@@ -25,7 +25,7 @@ angular
             console.log(response);
           }, function(errorObject) {
 
-            $scope.successMessage = "Sorry" + "test";
+            $scope.successMessage = "Sorry" + "tjhgjhggest";
           });
 
           //$scope.allMessages.push(message);
