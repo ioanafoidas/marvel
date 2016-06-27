@@ -2,15 +2,18 @@ package rest;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import domain.User;
 
-@Path("login")
+@Path("users")
 public class RestLogin {
 
 	private static final List<User> USERS = new ArrayList<User>();
@@ -45,15 +48,26 @@ public class RestLogin {
 		user.setColor("#f2e6ff");
 		user.setPic("../public/assets/images/user2.png");
 		USERS.add(user);
+		
+		user = new User();
+		user.setName("Black Widow");
+		user.setColor("#2fe6aa");
+		user.setPic("../public/assets/images/user33.png");
+		USERS.add(user);
 	}
 
 	@GET
-	@Path("user")
+	@Path("login")
 	@Produces(MediaType.APPLICATION_JSON)
 	public User login() {
 
-		for (User user : USERS) {
+		boolean randomed = false;
+		int randomedCount = 0;
+		while (!randomed && randomedCount++ < 30) {
+			int index = new Random().nextInt(USERS.size());
+			User user = USERS.get(index);
 			if (!user.isActive()) {
+				randomed = true;
 				user.setActive(true);
 				return user;
 			}
@@ -61,8 +75,20 @@ public class RestLogin {
 		return null;
 	}
 
+	@POST
+	@Path("logout/{name}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void logout(@PathParam("name") String name) {
+
+		for (User user : USERS) {
+			if (user.getName().equals("name")) {
+				user.setActive(false);
+			}
+		}
+	}
+
 	@GET
-	@Path("users")
+	@Path("all")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<User> getAll() {
 		return USERS;
