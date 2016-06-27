@@ -1,39 +1,32 @@
 angular
   .module('Chat')
-  .controller('homeCtrl', ['$scope', 'GetRequest', '$timeout', 'messageService', 'usersService',
-    function($scope, GetRequest, $timeout, messageService, usersService) {
-      $scope.allUsers = usersService.allUsers;
-      $scope.allMessages = messageService.allMessages;
-      //console.log($scope.allMessages);
-      //  usersService.generateColor();
+  .controller('homeCtrl', ['$scope', 'GetRequest', '$timeout', 'messageService', 'usersService', 'PostRequest', "$rootScope",
+    function($scope, GetRequest, $timeout, messageService, usersService, PostRequest, $rootScope) {
 
-      $scope.users = [{
-        id: 1,
-        name: "Thor",
-        image: "../public/assets/images/thor.png"
+      $rootScope.$on("users refreshed", function() {
+          $scope.users = usersService.allUsers;
+        });
 
-      }, {
-        id: 2,
-        name: "Captain Iron",
-        image: "../public/assets/images/IronMan.png"
-      }];
+        $rootScope.$on("messages refreshed", function() {
+            $scope.messages = messageService.allMessages;
+          });
 
 
 
       $scope.send = function(message) {
-        message.user = {
-          name: "Thor",
-          image: "../public/assets/images/thor.png",
-          color: "red"
-        };
-
+        message.user = usersService.currentUser;
         message.time = getDateTime();
+
         if (message.message != null) {
-
-
           console.log(message.message);
+          PostRequest.post_data("../rest/messages/post", message).then(function(response) {
+            console.log(response);
+          }, function(errorObject) {
 
-          $scope.allMessages.push(message);
+            $scope.successMessage = "Sorry" + "test";
+          });
+
+          //$scope.allMessages.push(message);
         }
         $timeout(function() {
           var scroller = document.getElementById("chat-conv");

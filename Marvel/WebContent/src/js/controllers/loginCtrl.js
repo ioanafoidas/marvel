@@ -8,12 +8,13 @@ angular
 
       $scope.Login = function() {
 
-        GetRequest.get_data('../rest/login/user', "User Login").then(function(response) {
+        GetRequest.get_data('../rest/login/user').then(function(response) {
           console.log(response);
-          $scope.successMessage = "Congratulations, today you are" + response.data.user.name;
+          $scope.successMessage = "Congratulations, today you are " + response.data.user.name;
 
           //logic to handle name, picture and color
-          // usersService.currentUser = response;
+          usersService.currentUser = response.data.user;
+          console.log(usersService.currentUser);
 
           setTimeout(function() {
             $uibModalInstance.close($scope.successMessage);

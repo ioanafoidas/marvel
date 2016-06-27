@@ -25,7 +25,7 @@ angular.module('Chat')
           });
 
           modalInstance.result.then(function(message) {
-            $scope.message = message;
+            $scope.successMessage = message;
           }, function() {
             console.log('Modal dismissed at: ' + new Date());
           });

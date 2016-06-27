@@ -3,9 +3,9 @@
     <div class="col-xs-4">
       <div class="avatarParent ">
         <div>
-          <img class="avatar" data-ng-src="{{user.image}}"/>
+          <img class="avatar" data-ng-src="{{user.pic}}"/>
         </div>
-        <div data-ng-class="{'status-online' : checkStatus(user.id), 'status-offline': !checkStatus(user.id)}"></div>
+        <div data-ng-class="{'status-online' : user.isActive, 'status-offline': !user.isActive}"></div>
       </div>
       </div>
       <div class="col-xs-8 user-name">
