@@ -15,11 +15,13 @@ angular
 
       $scope.send = function(message) {
         message.user = usersService.currentUser;
-        message.time = getDateTime();
+        message.date = getDateTime();
+        var sentMessage={};
+        sentMessage.message = message;
 
-        if (message.message != null) {
-          console.log(message.message);
-          PostRequest.post_data("../rest/messages/post", message).then(function(response) {
+        if (message.body != null) {
+          console.log(message.body);
+          PostRequest.post_data("../rest/messages/post", sentMessage).then(function(response) {
             console.log(response);
           }, function(errorObject) {
 
