@@ -81,7 +81,7 @@ public class RestLogin {
 	public void logout(@PathParam("name") String name) {
 
 		for (User user : USERS) {
-			if (user.getName().equals("name")) {
+			if (user.getName().equals(name)) {
 				user.setActive(false);
 			}
 		}
