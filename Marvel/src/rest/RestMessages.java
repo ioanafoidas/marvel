@@ -1,9 +1,11 @@
 package rest;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -14,6 +16,7 @@ import javax.ws.rs.core.MediaType;
 
 import domain.Message;
 
+@Stateless
 @Path("messages")
 public class RestMessages {
 
@@ -21,9 +24,9 @@ public class RestMessages {
 
 	@GET
 	@Path("all/{date}")
-	@Consumes({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Message> getAfter(@PathParam("date") Date date) {
+	public List<Message> getAfter(@PathParam("date") BigInteger date) {
 		List<Message> messagesAfter = new ArrayList<Message>();
 
 		for (Message m : messages) {
@@ -31,7 +34,11 @@ public class RestMessages {
 				messagesAfter.add(m);
 			}
 		}
+		//System.out.println(messagesAfter);
 		return messagesAfter;
+		
+		
+		
 	}
 
 	@POST
@@ -39,5 +46,7 @@ public class RestMessages {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void post(Message message) {
 		messages.add(message);
+		//System.out.println(messages);
+		
 	}
 }

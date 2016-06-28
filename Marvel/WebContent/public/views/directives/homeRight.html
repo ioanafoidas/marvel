@@ -1,17 +1,17 @@
 <article class="">
 
     <div class="chat-conv ">
-      <div class="bottom-align-text" id="chat-conv">
+      <div class="bottom-align-text" id="chat-conv1">
         <div data-ng-repeat="message in messages" class="row individual-message-box" ng-style="{'background-color': message.user.color}" data-ng-class="{'current-user-message': checkCurrentUser(message), 'other-user-message': !checkCurrentUser(message)}">
           <div class="col-xs-3 col-sm-2 col-lg-1" class="message-logo">
             <img class= "avatar" data-ng-src="{{message.user.pic}}"/>
           </div>
           <div class="col-xs-9 col-sm-10 col-lg-11">
             <div class="first-row">
-              {{message.user.name}} ({{message.time}})
+              {{message.user.name}} ({{message.date}})
             </div>
 
-            <div class="second-row" ng-bind-html="message.message | linky"></div>
+            <div class="second-row" ng-bind-html="message.body"></div>
           </div>
 
         </div>

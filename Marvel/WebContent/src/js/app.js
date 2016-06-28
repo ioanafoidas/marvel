@@ -12,11 +12,14 @@ angular
   //Save the messages to sessionStorage before the page is refreshed
   window.onbeforeunload = function(event) {
     $rootScope.$broadcast('savestate');
+    $rootScope.$broadcast('logout');
 
   };
 
+
+
   window.onunload = function(event) {
-    $rootScope.$broadcast('logout');
+    //  $rootScope.$broadcast('logout');
 
   };
 })
@@ -31,12 +34,12 @@ angular
   //   }
   // }
 
-  $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-
-    if (!Auth.isLoggedIn() && toState.name != "signup" && fromState.name) {
-       console.log('DENY');
-    $rootScope.$emit('ShowLoginModal');
-    //  event.preventDefault();
-    }
-  });
+   $rootScope.$on('$statechangesuccess', function(event, toState, toParams, fromState, fromParams) {
+  //
+  //   if (!Auth.isLoggedIn() && toState.name != "signup" && fromState.name) {
+  //      console.log('DENY');
+     $rootScope.$broadcast('restorestate');
+  //   //  event.preventDefault();
+  //   }
+   });
 }]);

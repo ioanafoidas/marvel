@@ -5,8 +5,6 @@ angular.module('Chat')
       templateUrl: 'views/directives/menu.html',
       controller: function($scope, $uibModal, $location, $rootScope, Auth) {
 
-
-
         $scope.message = "";
         $scope.isActive = function(route) {
           return route === $location.path();
@@ -36,16 +34,11 @@ angular.module('Chat')
           console.log("on event triggered");
         });
 
-        angular.element(document).ready(function () {
-          if (!Auth.isLoggedIn()) {
 
-             console.log('DENY');
-          $scope.openLogin(); //show login window
-          //  event.preventDefault();
-          }
-
-        });
-
+          angular.element(document).ready(function() {
+            $scope.openLogin(); //show login window
+            //  event.preventDefault();
+          });
 
       }
     }

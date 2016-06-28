@@ -1,5 +1,6 @@
 package domain;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -15,7 +16,7 @@ public class Message {
 	private String body;
 
 	@XmlElement(required = true)
-	private Date date;
+	private BigInteger date;
 
 	@XmlElement(required = true)
 	private User user;
@@ -28,11 +29,11 @@ public class Message {
 		this.body = body;
 	}
 
-	public Date getDate() {
+	public BigInteger getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(BigInteger date) {
 		this.date = date;
 	}
 
