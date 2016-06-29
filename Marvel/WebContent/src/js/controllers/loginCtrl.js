@@ -1,7 +1,7 @@
 angular
   .module('Chat')
-  .controller('LoginController', ['$scope', 'Validate', 'GetRequest', '$uibModalInstance', 'usersService',
-    function($scope, Validate, GetRequest, $uibModalInstance, usersService) {
+  .controller('LoginController', ['$scope', 'GetRequest', '$uibModalInstance', 'usersService',
+    function($scope, GetRequest, $uibModalInstance, usersService) {
 
       $scope.user = {};
 

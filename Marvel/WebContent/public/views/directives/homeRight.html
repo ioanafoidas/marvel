@@ -1,38 +1,40 @@
 <article class="">
 
-    <div class="chat-conv ">
-      <div class="bottom-align-text" id="chat-conv1">
-        <div data-ng-repeat="message in messages" class="row individual-message-box" ng-style="{'background-color': message.user.color}" data-ng-class="{'current-user-message': checkCurrentUser(message), 'other-user-message': !checkCurrentUser(message)}">
-          <div class="col-xs-3 col-sm-2 col-lg-1" class="message-logo">
-            <img class= "avatar" data-ng-src="{{message.user.pic}}"/>
-          </div>
-          <div class="col-xs-9 col-sm-10 col-lg-11">
-            <div class="first-row">
-              {{message.user.name}} ({{message.date}})
-            </div>
-
-            <div class="second-row" ng-bind-html="message.body"></div>
-          </div>
-
+  <div class="chat-conv ">
+    <div class="bottom-align-text" id="chat-conv1">
+      <div data-ng-repeat="message in messages" class="row individual-message-box" ng-style="{'background-color': message.user.color}" data-ng-class="{'current-user-message': checkCurrentUser(message), 'other-user-message': !checkCurrentUser(message)}">
+        <div class="col-xs-3 col-sm-2 col-lg-1" class="message-logo">
+          <img class="avatar" data-ng-src="{{message.user.pic}}"/>
         </div>
+        <div class="col-xs-9 col-sm-10 col-lg-11">
+          <div class="first-row">
+            {{message.user.name}}
+            ({{message.date | date: "y-MM-dd HH:mm:ss"}})
+          </div>
+
+          <div class="second-row" data-ng-bind-html="message.body | linky">
+            </div>
+        </div>
+
       </div>
     </div>
-    <div class="">
-      <form name="messageForm" data-ng-submit="send(message)" novalidate>
-        <div class="">
-          <!-- MESSAGE -->
-          <div class="" data-ng-class="{'has-error': messageForm.message.$invalid &&  messageForm.message.$dirty, 'has-success':  messageForm.message.$valid &&  messageForm.message.$dirty}">
+  </div>
+  <div class="">
+    <form name="messageForm" data-ng-submit="send(message)" novalidate>
+      <div class="">
+        <!-- MESSAGE -->
+        <div class="" data-ng-class="{'has-error': messageForm.message.$invalid &&  messageForm.message.$dirty, 'has-success':  messageForm.message.$valid &&  messageForm.message.$dirty}">
 
-            <input type="text" class="form-control" name="message" data-ng-model="message.body" placeholder="Enter message..." autofocus>
-          </div>
-
-        </div>
-        <br>
-        <div class="">
-          <!-- <button type="submit" class="btn btn-info" data-ng-disabled="messageForm.$invalid">Send message</button> -->
+          <input type="text" class="form-control" name="message" data-ng-model="message.body" placeholder="Enter message..." autofocus>
         </div>
 
-      </form>
-    </div>
+      </div>
+      <br>
+      <div class="">
+        <!-- <button type="submit" class="btn btn-info" data-ng-disabled="messageForm.$invalid">Send message</button> -->
+      </div>
+
+    </form>
+  </div>
 
 </article>

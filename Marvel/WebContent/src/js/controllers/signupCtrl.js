@@ -1,7 +1,7 @@
 angular
   .module('Chat')
-  .controller('SignupController', ['$scope', 'DatePicker', 'Validate', 'PostRequest', '$log',
-    function($scope, DatePicker, Validate, PostRequest, $log) {
+  .controller('SignupController', ['$scope', 'PostRequest',
+    function($scope, PostRequest) {
 
       $scope.datePicker = DatePicker;
       $scope.validate = Validate;

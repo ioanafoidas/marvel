@@ -4,6 +4,7 @@ angular
     function($scope, GetRequest, $timeout, messageService, usersService, PostRequest, $rootScope) {
       $scope.messages = [];
       $scope.users = [];
+      $scope.message.body = "";
 
       $rootScope.$on("users refreshed", function() {
         $scope.users = usersService.allUsers;
@@ -12,10 +13,7 @@ angular
       $rootScope.$on("messages refreshed", function() {
         $scope.messages = messageService.allMessages;
 
-        $timeout(function() {
-          var scroller = document.getElementById("chat-conv1");
-          scroller.scrollTop = scroller.scrollHeight;
-        }, 5, false);
+
       });
 
 
@@ -25,6 +23,7 @@ angular
         //for format according to backend
         var sentMessage = {};
         sentMessage.message = message;
+        console.log(message);
 
         if (message.body != null) {
           PostRequest.post_data("../rest/messages/post", sentMessage).then(function(response) {}, function(errorObject) {
@@ -32,7 +31,14 @@ angular
           });
 
         }
-        //function to scroll down to the latest message
+        //to bring the scroller on the end of the conversation
+        $timeout(function() {
+          var scroller = document.getElementById("chat-conv1");
+          if (scroller) {
+            scroller.scrollTop = scroller.scrollHeight;
+          }
+        }, 100, false);
+        //reset form once the message is sent
         $scope.message = {};
       }
 

@@ -11,31 +11,34 @@ angular
       return d.promise;
     };
 
-
     (function get_users_poll() {
       $http.get('../rest/users/all').success(function(data) {
         usersService.allUsers = data.user;
         $rootScope.$emit("users refreshed");
-        $timeout(get_users_poll, 2000);
+        $timeout(get_users_poll, 500);
       });
     })();
 
-
     (function get_messages_poll() {
-      var date = Date.now() - 200; //get all messages from the last 500ms
+      var date;
+      if (messageService.allMessages.length > 0) {
+        date = messageService.allMessages[messageService.allMessages.length - 1].date; //get all messages from the last received message
+      } else {
+        var date = Date.now() - 1000; //dummy value in case there is no messages stored
+      }
 
       $http.get('../rest/messages/all/' + date).success(function(data) {
         if (data.message.length > 0) {
+          console.log(data.message);
           for (var i = 0; i < data.message.length; i++) { //push the objects from the response array to the allMessages array in the UI
-
-            var date = new Date(data.message[i].date);
-            var month = date.getMonth() + 1
-            data.message[i].date = date.getFullYear() + "-" + month + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            if (!isNaN(data.message[i].body)) {
+              data.message[i].body = data.message[i].body.toString(); //to solve linky issue
+            }
             messageService.allMessages.push(data.message[i]);
-            $rootScope.$emit("messages refreshed"); //tell the controller there are new messages
           }
         }
-        $timeout(get_messages_poll, 200);
+        $rootScope.$emit("messages refreshed"); //tell the controller there are new messages
+        $timeout(get_messages_poll, 300);
       });
     })();
 

@@ -29,12 +29,6 @@ angular.module('Chat')
           });
         };
 
-        $rootScope.$on('ShowLoginModal', function() {
-          $scope.openLogin();
-          console.log("on event triggered");
-        });
-
-
           angular.element(document).ready(function() {
             $scope.openLogin(); //show login window
             //  event.preventDefault();

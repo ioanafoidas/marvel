@@ -14,7 +14,7 @@ angular
       }
     }
 
-    $rootScope.$on("savestate", service.Logout);
+    $rootScope.$on("logout", service.Logout);
 
     return service;
 
