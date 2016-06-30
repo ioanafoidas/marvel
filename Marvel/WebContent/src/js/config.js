@@ -10,15 +10,16 @@ angular
         .state('home', {
           url: '/',
           templateUrl: 'views/home.html',
-          controller: 'homeCtrl',
-          resolve: {
-            security: ['$q', 'usersService', function($q, usersService) {
-              console.log(usersService.currentUser);
-              if (angular.equals({}, usersService.currentUser)) {
-                return $q.reject("Not Authorized");
-              }
-            }]
-          }
+          controller: 'homeCtrl'
+          // ,
+          // resolve: {
+          //   security: ['$q', 'usersService', function($q, usersService) {
+          //     console.log(usersService.currentUser);
+          //     if (angular.equals({}, usersService.currentUser)) {
+          //       return $q.reject("Not Authorized");
+          //     }
+          //   }]
+          // }
 
         })
         .state('signup', {
