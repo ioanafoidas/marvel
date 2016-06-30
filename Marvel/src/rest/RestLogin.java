@@ -21,38 +21,38 @@ public class RestLogin {
 	static {
 		User user = new User();
 		user.setName("Captain America");
-		user.setColor("red");
-		user.setPic("../public/assets/images/user1.png");
+		user.setColor("#99ccff");
+		user.setPic("../public/assets/images/CaptainAmerica.jpg");
 		USERS.add(user);
 
 		user = new User();
 		user.setName("Thor");
-		user.setColor("blue");
+		user.setColor("#ffb3b3");
 		user.setPic("../public/assets/images/thor.png");
 		USERS.add(user);
 
 		user = new User();
 		user.setName("Iron Man");
-		user.setColor("#ccff33");
+		user.setColor("#ff7733");
 		user.setPic("../public/assets/images/IronMan.png");
 		USERS.add(user);
 
 		user = new User();
 		user.setName("Deadpool");
 		user.setColor("#7F0000");
-		user.setPic("../public/assets/images/user3.png");
+		user.setPic("../public/assets/images/Deadpool.jpg");
 		USERS.add(user);
 
 		user = new User();
-		user.setName("Guardian of the Galaxy");
-		user.setColor("#f2e6ff");
-		user.setPic("../public/assets/images/user2.png");
+		user.setName("wolverine");
+		user.setColor("#ffff99");
+		user.setPic("../public/assets/images/wolverine.png");
 		USERS.add(user);
 		
 		user = new User();
 		user.setName("Black Widow");
-		user.setColor("#2fe6aa");
-		user.setPic("../public/assets/images/user4.png");
+		user.setColor("#8080ff");
+		user.setPic("../public/assets/images/black-widow.jpg");
 		USERS.add(user);
 	}
 

@@ -14,6 +14,8 @@ angular.module('Chat')
           var modalInstance = $uibModal.open({
             templateUrl: 'loginModal.html',
             controller: 'LoginController',
+            backdrop: 'static', //to prevent closing the modal while clicking outside
+            keyboard: false, //to prevent closing the modal while pressing the ESC key
             link: function(scope, element, attr) {
               scope.dismiss = function() {
                 element.modal('hide');
@@ -28,6 +30,10 @@ angular.module('Chat')
             console.log('Modal dismissed at: ' + new Date());
           });
         };
+
+        $scope.logout = function() {
+            $rootScope.$broadcast('logout');
+        }
 
           angular.element(document).ready(function() {
             $scope.openLogin(); //show login window
