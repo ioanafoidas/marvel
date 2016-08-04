@@ -18,6 +18,7 @@ angular
         }, function(errorObject) {
           $scope.successMessage = "Sorry, there was an error in the authentication process. Please try again";
         });
+
       };
 
       $scope.close = function(result) {

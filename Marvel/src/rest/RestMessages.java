@@ -40,6 +40,16 @@ public class RestMessages {
 		
 		
 	}
+	
+	
+	@GET
+	@Path("all")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Message> getAll() {		
+		return messages;
+			
+	}
 
 	@POST
 	@Path("post")

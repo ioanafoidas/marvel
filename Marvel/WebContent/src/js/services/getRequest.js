@@ -19,25 +19,42 @@ angular
       });
     })();
 
+
+
     (function get_messages_poll() {
       var date;
       if (messageService.allMessages.length > 0) {
         date = messageService.allMessages[messageService.allMessages.length - 1].date; //get all messages from the last received message
       } else {
-        var date = Date.now() - 1000; //dummy value in case there is no messages stored
+        var date = Date.now() - 43200000; //last 12 hours
       }
 
       $http.get('../rest/messages/all/' + date).success(function(data) {
+
         if (data.message.length > 0) {
-          console.log(data.message);
+          
+          $rootScope.isNewMessage = true;
           for (var i = 0; i < data.message.length; i++) { //push the objects from the response array to the allMessages array in the UI
             if (!isNaN(data.message[i].body)) {
               data.message[i].body = data.message[i].body.toString(); //to solve linky issue
             }
             messageService.allMessages.push(data.message[i]);
+
+            if (usersService.currentUser.name == data.message[i].user.name) {
+              $rootScope.isCurrentUser = true;
+            } else {
+              $rootScope.isCurrentUser = false;
+            }
           }
+        } else {
+          $rootScope.isNewMessage = false;
         }
+
+
+
+
         $rootScope.$emit("messages refreshed"); //tell the controller there are new messages
+
         $timeout(get_messages_poll, 300);
       });
     })();

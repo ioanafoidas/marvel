@@ -10,7 +10,6 @@ angular
         var request = new XMLHttpRequest();
         request.open("POST", "../rest/users/logout/" + service.currentUser.name, service.currentUser.name, false );
         request.send();
-        console.log("test" + request.responseText);
 
         service.currentUser = {};
       }

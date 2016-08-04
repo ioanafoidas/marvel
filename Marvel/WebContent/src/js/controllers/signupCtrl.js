@@ -3,7 +3,7 @@ angular
   .controller('SignupController', ['$scope', 'PostRequest',
     function($scope, PostRequest) {
 
-      
+
       $scope.user = {};
       $scope.user.createdAt = new Date(); //default value for date
 

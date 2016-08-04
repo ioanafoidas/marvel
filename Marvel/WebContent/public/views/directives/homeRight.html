@@ -1,7 +1,7 @@
 <article class="">
 
   <div class="chat-conv ">
-    <div class="bottom-align-text" id="chat-conv1">
+    <div class="bottom-align-text" id="chat-conv1" ng-scroll="checkScroll($event)">
       <div data-ng-repeat="message in messages" class="row individual-message-box" ng-style="{'background-color': message.user.color}" data-ng-class="{'current-user-message': checkCurrentUser(message), 'other-user-message': !checkCurrentUser(message)}">
         <div class="col-xs-3 col-sm-2 col-lg-1" class="message-logo">
           <img class="avatar" data-ng-src="{{message.user.pic}}"/>
@@ -12,7 +12,7 @@
             ({{message.date | date: "y-MM-dd HH:mm:ss"}})
           </div>
 
-          <div class="second-row" data-ng-bind-html="message.body | linky">
+          <div class="second-row" data-ng-bind-html="message.body | linky:'_blank'">
             </div>
         </div>
 
